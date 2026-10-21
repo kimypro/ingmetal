@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ING METAL | Mantenimiento y montaje industrial</title>
+<meta name="description" content="ING METAL - Impulsamos tu productividad. Mantenimiento mecánico y eléctrico, tubería industrial, fabricación, reparación y montaje. Chinchiná, Caldas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0d10;
+    --panel:#14181e;
+    --panel2:#1a1f27;
+    --orange:#ff7a1a;
+    --orange2:#ffa14d;
+    --steel:#9aa4b2;
+    --line:#262c36;
+    --white:#f2f5f8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--white);font-family:"Inter",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+  h1,h2,h3,.cond{font-family:"Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:.5px;line-height:1.05}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:min(1150px,92%);margin:0 auto}
+  .grito{color:var(--orange);text-transform:uppercase}
+
+  /* ============ NAV ============ */
+  header{position:sticky;top:0;z-index:50;background:rgba(11,13,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:26px;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+  .logo .mark{width:34px;height:34px;background:var(--orange);color:#0b0d10;display:grid;place-items:center;border-radius:6px;font-size:17px;font-weight:800;box-shadow:0 0 18px rgba(255,122,26,.45)}
+  .logo b{color:var(--orange)}
+  .links{display:flex;gap:26px;font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.8px}
+  .links a{color:var(--steel);transition:.2s;position:relative}
+  .links a:hover{color:var(--white)}
+  .links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--orange);transition:.25s}
+  .links a:hover::after{width:100%}
+  .nav-tel{background:var(--orange);color:#0b0d10;font-weight:700;font-size:14px;padding:10px 18px;border-radius:6px;transition:.2s}
+  .nav-tel:hover{background:var(--orange2);box-shadow:0 0 20px rgba(255,122,26,.5)}
+  #burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+  #burger span{display:block;width:26px;height:3px;background:var(--white);margin:5px 0;border-radius:2px}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;padding:110px 0 90px;overflow:hidden;
+    background:
+      radial-gradient(900px 500px at 80% -10%,rgba(255,122,26,.18),transparent 60%),
+      radial-gradient(700px 500px at 10% 110%,rgba(255,122,26,.10),transparent 60%),
+      linear-gradient(180deg,#0e1117,#0b0d10)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:52px 52px;opacity:.35;-webkit-mask-image:radial-gradient(circle at 50% 40%,#000,transparent 78%);mask-image:radial-gradient(circle at 50% 40%,#000,transparent 78%)}
+  .hero .wrap{position:relative}
+  .tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);border:1px solid rgba(255,122,26,.4);padding:7px 15px;border-radius:99px;background:rgba(255,122,26,.07)}
+  .hero h1{font-size:clamp(46px,8vw,96px);font-weight:800;text-transform:uppercase;margin:22px 0 6px}
+  .hero h1 span{color:var(--orange);text-shadow:0 0 34px rgba(255,122,26,.55)}
+  .hero .slogan{font-family:"Barlow Condensed",sans-serif;font-size:clamp(24px,3.6vw,40px);font-weight:600;color:var(--steel);text-transform:uppercase;letter-spacing:1.5px}
+  .hero p.intro{max-width:640px;margin:20px 0 34px;color:#c3cbd6;font-size:17px}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:15px 30px;border-radius:8px;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:1px;transition:.2s;cursor:pointer;border:none;font-family:"Inter",sans-serif}
+  .btn-p{background:var(--orange);color:#0b0d10;box-shadow:0 10px 26px rgba(255,122,26,.35)}
+  .btn-p:hover{background:var(--orange2);transform:translateY(-3px);box-shadow:0 16px 32px rgba(255,122,26,.45)}
+  .btn-s{background:transparent;color:var(--white);border:1.6px solid var(--line)}
+  .btn-s:hover{border-color:var(--orange);color:var(--orange)}
+  .cinta{margin-top:56px;height:14px;background:repeating-linear-gradient(45deg,var(--orange) 0 18px,#0b0d10 18px 36px);opacity:.85;border-radius:4px}
+
+  /* ============ STATS ============ */
+  .stats{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:44px 0}
+  .stat{text-align:center;padding:8px}
+  .stat .num{font-family:"Barlow Condensed",sans-serif;font-size:clamp(38px,5vw,56px);font-weight:800;color:var(--orange)}
+  .stat .lbl{font-size:13.5px;color:var(--steel);text-transform:uppercase;letter-spacing:1.4px}
+
+  /* ============ SECCIONES ============ */
+  section{padding:86px 0}
+  .sec-head{margin-bottom:44px}
+  .sec-head small{display:block;color:var(--orange);letter-spacing:3px;text-transform:uppercase;font-size:12.5px;font-weight:600;margin-bottom:10px}
+  .sec-head h2{font-size:clamp(32px,5vw,52px);font-weight:800;text-transform:uppercase}
+  .sec-head p{color:var(--steel);max-width:620px;margin-top:12px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:30px 26px;transition:.25s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;left:0;height:3px;width:0;background:var(--orange);transition:.3s}
+  .card:hover{transform:translateY(-6px);border-color:rgba(255,122,26,.45);box-shadow:0 18px 40px rgba(0,0,0,.5)}
+  .card:hover::before{width:100%}
+  .card h3{font-size:23px;text-transform:uppercase;margin-bottom:10px}
+  .card p{color:var(--steel);font-size:15px}
+  .icon{width:52px;height:52px;border-radius:11px;background:rgba(255,122,26,.12);display:grid;place-items:center;margin-bottom:18px}
+  .icon svg{width:28px;height:28px;stroke:var(--orange);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+  .servicios .cards{grid-template-columns:repeat(3,1fr)}
+
+  /* doble texto */
+  .doble{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:26px}
+  .bloque{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:26px 26px}
+  .bloque h3{font-size:24px;text-transform:uppercase;margin-bottom:10px}
+  .bloque p{color:var(--steel);font-size:15.5px}
+
+  /* ============ GALERIA ============ */
+  #trabajos{background:linear-gradient(180deg,#0b0d10,#0e1218)}
+  .galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .galeria figure{position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--line);aspect-ratio:4/3;cursor:zoom-in;background:var(--panel2)}
+  .galeria img{width:100%;height:100%;object-fit:cover;transition:.4s;filter:saturate(.95)}
+  .galeria figure:hover img{transform:scale(1.09);filter:saturate(1.15)}
+  .galeria figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.65));opacity:0;transition:.3s}
+  .galeria figure:hover::after{opacity:1}
+  .galeria figcaption{position:absolute;left:14px;bottom:12px;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);z-index:2;opacity:0;transform:translateY(8px);transition:.3s}
+  .galeria figure:hover figcaption{opacity:1;transform:none}
+
+  #lightbox{position:fixed;inset:0;background:rgba(5,6,8,.95);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;cursor:zoom-out}
+  #lightbox.on{display:flex}
+  #lightbox img{max-width:min(1000px,94vw);max-height:86vh;border-radius:10px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.8)}
+  #lightbox .x{position:absolute;top:18px;right:26px;font-size:40px;color:var(--steel);line-height:1}
+
+  /* ============ CONTACTO ============ */
+  #contacto{background:
+      radial-gradient(700px 400px at 90% 0%,rgba(255,122,26,.13),transparent 60%),
+      var(--bg)}
+  .cont-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .info-list{display:grid;gap:14px}
+  .info{display:flex;gap:15px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;transition:.2s}
+  .info:hover{border-color:rgba(255,122,26,.5)}
+  .info .ic{width:42px;height:42px;flex:none;border-radius:9px;background:rgba(255,122,26,.12);display:grid;place-items:center;font-size:19px}
+  .info b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:19px;text-transform:uppercase;letter-spacing:.6px}
+  .info span,.info a{color:var(--steel);font-size:15px}
+  .info a:hover{color:var(--orange)}
+  form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px}
+  form h3{font-size:26px;text-transform:uppercase;margin-bottom:6px}
+  form>p{color:var(--steel);font-size:14.5px;margin-bottom:20px}
+  .campo{margin-bottom:15px}
+  .campo label{display:block;font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:var(--steel);margin-bottom:7px;font-weight:600}
+  .campo input,.campo select,.campo textarea{width:100%;padding:13px 14px;background:var(--panel2);border:1.5px solid var(--line);border-radius:9px;color:var(--white);font-size:15px;font-family:inherit;outline:none;transition:.2s}
+  .campo input:focus,.campo select:focus,.campo textarea:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(255,122,26,.12)}
+  .campo textarea{resize:vertical;min-height:96px}
+  .btn-wsp{width:100%;background:#1fa855;color:#fff}
+  .btn-wsp:hover{background:#25c966;transform:translateY(-2px);box-shadow:0 12px 26px rgba(31,168,85,.4)}
+  .avisito{font-size:12.5px;color:#6f7b8c;text-align:center;margin-top:12px}
+
+  /* ============ FOOTER ============ */
+  footer{background:#08090c;border-top:1px solid var(--line);padding:34px 0;text-align:center}
+  footer .logo{justify-content:center;margin-bottom:12px}
+  footer p{color:#6f7b8c;font-size:13.5px}
+  footer p b{color:var(--steel)}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:960px){
+    .cards,.servicios .cards{grid-template-columns:repeat(2,1fr)}
+    .galeria{grid-template-columns:repeat(3,1fr)}
+    .cont-grid{grid-template-columns:1fr}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);gap:24px}
+  }
+  @media(max-width:720px){
+    .links{position:fixed;top:66px;left:0;right:0;background:#0e1117;flex-direction:column;gap:0;padding:0;max-height:0;overflow:hidden;transition:.3s;border-bottom:1px solid var(--line)}
+    .links.open{max-height:340px}
+    .links a{padding:16px 6%;border-bottom:1px solid var(--line);font-size:15px}
+    .links a::after{display:none}
+    #burger{display:block}
+    .nav-tel{display:none}
+    .cards,.servicios .cards,.doble{grid-template-columns:1fr}
+    .galeria{grid-template-columns:repeat(2,1fr)}
+    section{padding:64px 0}
+    .hero{padding:70px 0 60px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#inicio" class="logo"><span class="mark">IM</span> ING<b>METAL</b></a>
+    <div class="links" id="links">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a class="nav-tel" href="tel:+573104201092">📞 310 420 1092</a>
+    <button id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <span class="tag">⚙ Mantenimiento · Montaje · Industria</span>
+    <h1>ING <span>METAL</span></h1>
+    <div class="slogan">Impulsamos tu productividad</div>
+    <p class="intro">Somos expertos en mantenimiento y montaje. Brindamos soluciones integrales para las necesidades de la industria con un equipo humano altamente capacitado y tecnología de punta.</p>
+    <div class="btns">
+      <a href="#contacto" class="btn btn-p">Cotizar ahora</a>
+      <a href="#servicios" class="btn btn-s">Ver servicios</a>
+    </div>
+    <div class="cinta"></div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="num" data-n="1500">0</div><div class="lbl">Clientes satisfechos</div></div>
+    <div class="stat"><div class="num" data-n="500">0</div><div class="lbl">Servicios realizados</div></div>
+    <div class="stat"><div class="num" data-n="100" data-suf="%">0</div><div class="lbl">Compromiso y calidad</div></div>
+    <div class="stat"><div class="num">PRO</div><div class="lbl">Personal especializado</div></div>
+  </div>
+</div>
+
+<!-- ================= SERVICIOS ================= -->
+<section class="servicios" id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <small>Lo que hacemos</small>
+      <h2>Nuestros servicios</h2>
+      <p>Soluciones a medida para optimizar el rendimiento y la vida útil de sus equipos.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M3 8h7a3 3 0 0 1 3 3v2a3 3 0 0 0 3 3h5"/><path d="M3 5v6M21 14v6"/></svg></div><h3>Tubería industrial</h3><p>Diseño, montaje y mantenimiento de sistemas de tubería para procesos industriales.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></div><h3>Mantenimiento mecánico</h3><p>Preventivo, predictivo y correctivo para maquinaria y equipos críticos.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div><h3>Mantenimiento eléctrico</h3><p>Instalación, diagnóstico y reparación de sistemas y tableros eléctricos.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Suministros técnicos</h3><p>Provisión de repuestos, materiales y componentes técnicos especializados.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg></div><h3>Servicio mecanizado</h3><p>Mecanizado de piezas a medida con precisión y acabados de calidad.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9z"/><path d="M12 13c1 1.4 1.6 2.2 1.6 3.2a1.6 1.6 0 0 1-3.2 0c0-1 .6-1.8 1.6-3.2z"/></svg></div><h3>Soldadura y montaje</h3><p>Soldadores mecánicos y auxiliares para trabajos de estructura y ensamble.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 6h6v5H4zM14 13h6v5h-6z"/><path d="M10 8.5h4a3 3 0 0 1 3 3v1.5M7 11v5a3 3 0 0 0 3 3h4"/></svg></div><h3>Instalación de tubería</h3><p>Instalación de redes de agua, vapor, gas y fluidos de proceso.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M3 21V9l5 3V9l5 3V9l5 3v9z"/><path d="M7 21v-3M12 21v-3M17 21v-3"/></svg></div><h3>Fabricación</h3><p>Fabricación de estructuras, piezas y equipos metálicos según especificación.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 21H10L4 15a4 4 0 0 1 5-5l1.5-1.5"/></svg></div><h3>Reparación y montaje</h3><p>Reparación de equipos y montaje de instalaciones con estándares de calidad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NOSOTROS ================= -->
+<section id="nosotros">
+  <div class="wrap">
+    <div class="sec-head">
+      <small>Conócenos</small>
+      <h2>Trayectoria que trasciende</h2>
+      <p>Mejoramos los procesos productivos de su empresa con tecnología de punta, innovación y procesos confiables.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Misión</h3><p>ING METAL es una empresa que brinda soluciones, dedicada a prestar los servicios con un excelente equipo humano y técnico, de manera oportuna bajo el uso de tecnología de punta e innovación, asegurando procesos confiables.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="2.6"/></svg></div><h3>Visión</h3><p>Ser líderes en mantenimiento, fabricación, reparación, pintura, instalación de tubería, mecánica, eléctrica y montaje con excelencia: altamente reconocidos, competitivos y confiables, donde se garantice la mejor atención y calidad.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Política de calidad</h3><p>Nos comprometemos a satisfacer las necesidades de los clientes ejecutando nuestras operaciones con altos estándares de calidad, cumpliendo requisitos y mejorando continuamente la eficacia del Sistema de Gestión de Calidad.</p></div>
+    </div>
+    <div class="doble">
+      <div class="bloque"><h3>Soluciones a medida</h3><p>Optimizamos el rendimiento y la vida útil de los equipos, lo que se traduce en un funcionamiento más eficiente y una reducción de los tiempos de inactividad no planificados. Nuestros servicios abarcan mantenimiento preventivo, predictivo y correctivo.</p></div>
+      <div class="bloque"><h3>Organización técnica</h3><p>Desarrollamos nuestras labores basados en criterios avanzados de organización, utilizando organigramas de funciones y procedimientos, en concordancia con el servicio institucional y empresarial que demanden nuestros clientes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRABAJOS ================= -->
+<section id="trabajos">
+  <div class="wrap">
+    <div class="sec-head">
+      <small>Portfolio</small>
+      <h2>Nuestros trabajos</h2>
+      <p>Una muestra de los servicios ejecutados para nuestros clientes. Haz clic para ampliar.</p>
+    </div>
+    <div class="galeria" id="galeria"></div>
+  </div>
+</section>
+
+<div id="lightbox"><span class="x">&times;</span><img alt="Trabajo ING METAL" id="lb-img"></div>
+
+<!-- ================= CONTACTO ================= -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="sec-head">
+      <small>Hablemos</small>
+      <h2>Contáctanos</h2>
+      <p>Cuéntanos qué necesitas y te contactamos a la brevedad.</p>
+    </div>
+    <div class="cont-grid">
+      <div class="info-list">
+        <div class="info"><div class="ic">📍</div><div><b>Ubicación</b><span>Cra 12 # 8 - 30, Chinchiná - Caldas, Colombia</span><br><a href="https://www.google.com/maps/search/?api=1&query=Cra+12+%23+8-30+Chinchina+Caldas+Colombia" target="_blank">Ver en Google Maps →</a></div></div>
+        <div class="info"><div class="ic">📱</div><div><b>Teléfonos</b><a href="tel:+573104201092">310 420 1092</a> · <a href="tel:+573173752721">317 375 2721</a> · <a href="tel:+573105090928">310 509 0928</a></div></div>
+        <div class="info"><div class="ic">💬</div><div><b>WhatsApp</b><a href="https://wa.me/573104201092" target="_blank">Escríbenos directo por WhatsApp →</a></div></div>
+        <div class="info"><div class="ic">📄</div><div><b>Identificación</b><span>NIT 901779228-4 · ING METAL</span></div></div>
+        <div class="info"><div class="ic">🕒</div><div><b>Horario de atención</b><span>Lunes a viernes · Sábados por acuerdo</span></div></div>
+      </div>
+
+      <form id="formWsp">
+        <h3>Cotización rápida</h3>
+        <p>Llena el formulario y te respondemos por WhatsApp.</p>
+        <div class="campo"><label>Nombre</label><input id="f-nombre" type="text" placeholder="Tu nombre" required></div>
+        <div class="campo"><label>Servicio</label>
+          <select id="f-servicio">
+            <option>Tubería industrial</option>
+            <option>Mantenimiento mecánico</option>
+            <option>Mantenimiento eléctrico</option>
+            <option>Suministros técnicos</option>
+            <option>Servicio mecanizado</option>
+            <option>Soldadura y montaje</option>
+            <option>Instalación de tubería</option>
+            <option>Fabricación</option>
+            <option>Reparación y montaje</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="campo"><label>Mensaje</label><textarea id="f-msg" placeholder="Cuéntanos qué necesitas..."></textarea></div>
+        <button type="submit" class="btn btn-wsp">Enviar por WhatsApp</button>
+        <p class="avisito">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><span class="mark">IM</span> ING<b>METAL</b></div>
+    <p><b>Impulsamos tu productividad</b> · Cra 12 # 8 - 30, Chinchiná - Caldas, Colombia · NIT 901779228-4</p>
+    <p style="margin-top:8px">© 2026 ING METAL. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+  // menu movil
+  document.getElementById('burger').onclick = () => document.getElementById('links').classList.toggle('open');
+  document.querySelectorAll('#links a').forEach(a => a.onclick = () => document.getElementById('links').classList.remove('open'));
+
+  // galeria (se llena desde la carpeta img/)
+  const OBRAS = 25;
+  const g = document.getElementById('galeria');
+  for (let i = 0; i < OBRAS; i++) {
+    const n = 'img/obra_' + String(i).padStart(2, '0') + '.jpg';
+    const f = document.createElement('figure');
+    f.innerHTML = '<img loading="lazy" src="' + n + '" alt="Trabajo ' + i + '"><figcaption>ING METAL · Obra</figcaption>';
+    f.onclick = () => { document.getElementById('lb-img').src = n; document.getElementById('lightbox').classList.add('on'); };
+    g.appendChild(f);
+  }
+  document.getElementById('lightbox').onclick = () => document.getElementById('lightbox').classList.remove('on');
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('on'); });
+
+  // contadores
+  const nums = document.querySelectorAll('.num[data-n]');
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, fin = +el.dataset.n, suf = el.dataset.suf || '';
+    let t0 = null;
+    const step = ts => {
+      if (!t0) t0 = ts;
+      const p = Math.min((ts - t0) / 1400, 1);
+      const val = Math.floor(fin * (1 - Math.pow(1 - p, 3)));
+      el.textContent = (fin >= 1000 ? val.toLocaleString('es-CO') : val) + suf;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+    io.unobserve(el);
+  }), { threshold: .5 });
+  nums.forEach(n => io.observe(n));
+
+  // formulario -> whatsapp
+  document.getElementById('formWsp').onsubmit = e => {
+    e.preventDefault();
+    const n = document.getElementById('f-nombre').value.trim();
+    const s = document.getElementById('f-servicio').value;
+    const m = document.getElementById('f-msg').value.trim();
+    if (!n) { alert('Escribe tu nombre'); return; }
+    const txt = 'Hola ING METAL 👋%0ASoy ' + encodeURIComponent(n) + '%0AServicio: ' + encodeURIComponent(s) + '%0A%0A' + encodeURIComponent(m || 'Quiero solicitar una cotización.');
+    window.open('https://wa.me/573104201092?text=' + txt, '_blank');
+  };
+</script>
+</body>
+</html>
